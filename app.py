@@ -21,13 +21,14 @@ if up_img is not None:
 
     
     #y=0.1056*x+86.39
-    y = (x-86.39)/0.1056
+    x-=6.67
+    y=(x-78.722)/0.1741
 
-    if(x<118.3):
+    if(x<110.663):
         status="normal"
         st.markdown("**<span style='color:rgba(101, 246, 142, 1)'>Normal</span>**", unsafe_allow_html=True)
     
-    elif(118.3<=x<=138.67):
+    elif(110.663<=x<=131):
         if(y<191): 
             status="normal"
             st.markdown("**<span style='color:rgba(101, 246, 142, 1)'>Normal</span>**", unsafe_allow_html=True)
@@ -46,7 +47,7 @@ if up_img is not None:
             status="high"
             st.markdown("**<span style='color:rgba(246, 240, 101, 1)'>High</span>**", unsafe_allow_html=True)
 
-    elif(x>138.67):
+    elif(x>131):
         status="high"
         st.markdown("**<span style='color:rgbargba(200, 0, 0, 1)'>High</span>**", unsafe_allow_html=True)
 
