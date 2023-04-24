@@ -26,12 +26,8 @@ if up_img is not None:
     if(x<118.3):
         status="normal"
         st.markdown("**<span style='color:rgba(101, 246, 142, 1)'>Normal</span>**", unsafe_allow_html=True)
-    elif(x>138.67):
-        status="high"
-        st.markdown("**<span style='color:rgbargba(200, 0, 0, 1)'>High</span>**", unsafe_allow_html=True)
-        st.write(f"concentation : {int(y)} ppm")
     
-    else:
+    elif(118.3<=x<=138.67):
         if(y<191): 
             status="normal"
             st.markdown("**<span style='color:rgba(101, 246, 142, 1)'>Normal</span>**", unsafe_allow_html=True)
@@ -39,16 +35,20 @@ if up_img is not None:
         elif(y<=250): 
             status="normal"
             st.markdown("**<span style='color:rgbargba(101, 246, 142, 1)'>Normal/span>**", unsafe_allow_html=True)
-            st.write(f"concentation : {int(y)} ppm")
+            st.write(f"concentration : {int(y)} ppm")
         
         elif(y<=303): 
             status="high"
             st.markdown("**<span style='color:rgbargba(246, 101, 101, 1)'>High</span>**", unsafe_allow_html=True)
-            st.write(f"concentation : {int(y)} ppm")
+            st.write(f"concentration : {int(y)} ppm")
 
-        else: 
+        elif(y>303): 
             status="high"
             st.markdown("**<span style='color:rgba(246, 240, 101, 1)'>High</span>**", unsafe_allow_html=True)
+
+    elif(x>138.67):
+        status="high"
+        st.markdown("**<span style='color:rgbargba(200, 0, 0, 1)'>High</span>**", unsafe_allow_html=True)
 
     # txt = st.text_area("", status)
     #st.write(txt)
